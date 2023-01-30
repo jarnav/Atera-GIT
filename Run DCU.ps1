@@ -22,5 +22,5 @@ if( !$correctPath ) {
 
 # Execute Configuration and Apply Updates
 & $correctPath /configure -silent -autoSuspendBitLocker=enable -userConsent=disable
-& $correctPath /scan -outputLog="c:\temp\DellCommandUpdateScan%dt%.log"
-& $correctPath /applyUpdates -reboot=disable -outputLog="c:\temp\DellCommandUpdateApply%dt%.log"
+& $correctPath /scan -outputLog="c:\temp\DellCommandUpdateScan.log"
+& $correctPath /applyUpdates -reboot=disable -outputLog="c:\temp\DellCommandUpdateApply.log"
