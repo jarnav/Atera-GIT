@@ -1,6 +1,6 @@
  #Verify manufacturer is Dell
  $Manufacturer = (Get-WMIObject -Class win32_ComputerSystem).Manufacturer
- if ($Manufacturer -notlike "Dell*") {
+ if ($Manufacturer -notlike "*Dell*") {
      Write-Host "Computer is not a Dell."
      exit
  }
