@@ -1,4 +1,4 @@
- gi#Test potential Dell Command Update Paths
+ #Test potential Dell Command Update Paths
 $dcupaths =
   "$env:ProgramFiles\Dell\CommandUpdate\dcu-cli.exe",
   "${env:ProgramFiles(x86)}\Dell\CommandUpdate\dcu-cli.exe"
@@ -15,5 +15,4 @@ if( !$correctPath ) {
 }
 
 # Execute Configuration and Apply Updates, Reboot
-& $correctPath /configure -updatetype='bios,firmware,driver,application,utility,others'
-& $correctPath /applyupdates -reboot=enable -autosuspendbitlocker=enable
+& $correctPath /applyUpdates -reboot=enable -autoSuspendBitLocker=enable -outputLog="c:\temp\DellCommandUpdate%dt%.log"
