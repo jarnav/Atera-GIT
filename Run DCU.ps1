@@ -20,7 +20,7 @@ if( !$correctPath ) {
   throw "Could not find dcu-cli.exe at any of the following paths: $(@( $dcupaths) -join ', ')"
 }
 
-# Execute Configuration and Apply Updates, Reboot
+# Execute Configuration and Apply Updates
 & $correctPath /configure -silent -autoSuspendBitLocker=enable -userConsent=disable
 & $correctPath /scan -outputLog="c:\temp\DellCommandUpdateScan%dt%.log"
 & $correctPath /applyUpdates -reboot=disable -outputLog="c:\temp\DellCommandUpdateApply%dt%.log"
