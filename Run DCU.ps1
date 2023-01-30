@@ -1,5 +1,10 @@
  #Test potential Dell Command Update Paths
-$dcupaths =
+ $Manufacturer = (Get-WMIObject -Class win32_ComputerSystem).Manufacturer
+ if ($Manufacturer -notlike "*Dell*") {
+     Write-Host "Computer is not a Dell."
+     exit
+ }
+ $dcupaths =
   "$env:ProgramFiles\Dell\CommandUpdate\dcu-cli.exe",
   "${env:ProgramFiles(x86)}\Dell\CommandUpdate\dcu-cli.exe"
 
