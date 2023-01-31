@@ -4,7 +4,7 @@
      Write-Host "Computer is not a Dell."
      exit
  }
-  #Test potential Dell Command Update Paths
+#Test potential Dell Command Update Paths
  $dcupaths =
   "$env:ProgramFiles\Dell\CommandUpdate\dcu-cli.exe",
   "${env:ProgramFiles(x86)}\Dell\CommandUpdate\dcu-cli.exe"
@@ -20,7 +20,7 @@ if( !$correctPath ) {
   throw "Could not find dcu-cli.exe at any of the following paths: $(@( $dcupaths) -join ', ')"
 }
 
-# Execute Configuration and Apply Updates
+#Execute Configuration and Apply Updates
 & $correctPath /configure -silent -autoSuspendBitLocker=enable -userConsent=disable
 & $correctPath /scan -outputLog="c:\temp\DellCommandUpdateScan.log"
 & $correctPath /applyUpdates -reboot=disable -outputLog="c:\temp\DellCommandUpdateApply.log"
